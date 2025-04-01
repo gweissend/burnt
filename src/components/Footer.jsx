@@ -1,134 +1,192 @@
-import Link from 'next/link'
+import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/plus-grid'
+import { Button } from './button'
+import { Container } from './container'
+import { Gradient } from './gradient'
+import { Link } from './link'
+import { Logo } from './logo'
+import { Subheading } from './text'
 
-import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
-import { Logo } from '@/components/Logo'
-import { socialMediaProfiles } from '@/components/SocialMedia'
-
-const navigation = [
-  {
-    title: 'Work',
-    links: [
-      { title: 'FamilyFund', href: '/work/family-fund' },
-      { title: 'Unseal', href: '/work/unseal' },
-      { title: 'Phobia', href: '/work/phobia' },
-      {
-        title: (
-          <>
-            See all <span aria-hidden="true">&rarr;</span>
-          </>
-        ),
-        href: '/work',
-      },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { title: 'About', href: '/about' },
-      { title: 'Process', href: '/process' },
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact us', href: '/contact' },
-    ],
-  },
-  {
-    title: 'Connect',
-    links: socialMediaProfiles,
-  },
-]
-
-function Navigation() {
+function CallToAction() {
   return (
-    <nav>
-      <ul role="list" className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-        {navigation.map((section, sectionIndex) => (
-          <li key={sectionIndex}>
-            <div className="font-display text-sm font-semibold tracking-wider text-neutral-950">
-              {section.title}
-            </div>
-            <ul role="list" className="mt-4 text-sm text-neutral-700">
-              {section.links.map((link, linkIndex) => (
-                <li key={linkIndex} className="mt-4">
-                  <Link
-                    href={link.href}
-                    className="transition hover:text-neutral-950"
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className="relative pt-20 pb-16 text-center sm:py-24">
+      <hgroup>
+        <Subheading>Get started</Subheading>
+        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
+          Ready for a change?
+          <br />
+          Start your journey today.
+        </p>
+      </hgroup>
+      <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
+        Take the first step toward finding your ideal career path with our personalized job matching.
+      </p>
+      <div className="mt-6">
+        <Button className="w-full sm:w-auto" href="#">
+          Take the quiz
+        </Button>
+      </div>
+    </div>
   )
 }
 
-function ArrowIcon(props) {
+function SitemapHeading({ children }) {
+  return <h3 className="text-sm/6 font-medium text-gray-950/50">{children}</h3>
+}
+
+function SitemapLinks({ children }) {
+  return <ul className="mt-6 space-y-4 text-sm/6">{children}</ul>
+}
+
+function SitemapLink(props) {
   return (
-    <svg viewBox="0 0 16 6" aria-hidden="true" {...props}>
+    <li>
+      <Link
+        {...props}
+        className="font-medium text-gray-950 data-hover:text-gray-950/75"
+      />
+    </li>
+  )
+}
+
+function Sitemap() {
+  return (
+    <>
+      <div>
+        <SitemapHeading>Product</SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="/pricing">Pricing</SitemapLink>
+          <SitemapLink href="#">Assessments</SitemapLink>
+          <SitemapLink href="#">Job Matching</SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div>
+        <SitemapHeading>Company</SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="#">Careers</SitemapLink>
+          <SitemapLink href="/blog">Blog</SitemapLink>
+          <SitemapLink href="/company">About Us</SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div>
+        <SitemapHeading>Support</SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="#">Help center</SitemapLink>
+          <SitemapLink href="#">Community</SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div>
+        <SitemapHeading>Legal</SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="#">Terms of service</SitemapLink>
+          <SitemapLink href="#">Privacy policy</SitemapLink>
+        </SitemapLinks>
+      </div>
+    </>
+  )
+}
+
+function SocialIconX(props) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+      <path d="M12.6 0h2.454l-5.36 6.778L16 16h-4.937l-3.867-5.594L2.771 16H.316l5.733-7.25L0 0h5.063l3.495 5.114L12.6 0zm-.86 14.376h1.36L4.323 1.539H2.865l8.875 12.837z" />
+    </svg>
+  )
+}
+
+function SocialIconFacebook(props) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
       <path
-        fill="currentColor"
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M16 3 10 .5v2H0v1h10v2L16 3Z"
+        d="M16 8.05C16 3.603 12.418 0 8 0S0 3.604 0 8.05c0 4.016 2.926 7.346 6.75 7.95v-5.624H4.718V8.05H6.75V6.276c0-2.017 1.194-3.131 3.022-3.131.875 0 1.79.157 1.79.157v1.98h-1.008c-.994 0-1.304.62-1.304 1.257v1.51h2.219l-.355 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.95z"
       />
     </svg>
   )
 }
 
-function NewsletterForm() {
+function SocialIconLinkedIn(props) {
   return (
-    <form className="max-w-sm">
-      <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
-        Sign up for our newsletter
-      </h2>
-      <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest design news, articles, resources and
-        inspiration.
-      </p>
-      <div className="relative mt-6">
-        <input
-          type="email"
-          placeholder="Email address"
-          autoComplete="email"
-          aria-label="Email address"
-          className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pr-20 pl-6 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:ring-neutral-950/5 focus:outline-hidden"
-        />
-        <div className="absolute inset-y-1 right-1 flex justify-end">
-          <button
-            type="submit"
-            aria-label="Submit"
-            className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800"
-          >
-            <ArrowIcon className="w-4" />
-          </button>
-        </div>
-      </div>
-    </form>
+    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+      <path d="M14.82 0H1.18A1.169 1.169 0 000 1.154v13.694A1.168 1.168 0 001.18 16h13.64A1.17 1.17 0 0016 14.845V1.15A1.171 1.171 0 0014.82 0zM4.744 13.64H2.369V5.996h2.375v7.644zm-1.18-8.684a1.377 1.377 0 11.52-.106 1.377 1.377 0 01-.527.103l.007.003zm10.075 8.683h-2.375V9.921c0-.885-.015-2.025-1.234-2.025-1.218 0-1.425.966-1.425 1.968v3.775H6.233V5.997H8.51v1.05h.032c.317-.601 1.09-1.235 2.246-1.235 2.405-.005 2.851 1.578 2.851 3.63v4.197z" />
+    </svg>
+  )
+}
+
+function SocialLinks() {
+  return (
+    <>
+      <Link
+        href="https://facebook.com"
+        target="_blank"
+        aria-label="Visit us on Facebook"
+        className="text-gray-950 data-hover:text-gray-950/75"
+      >
+        <SocialIconFacebook className="size-4" />
+      </Link>
+      <Link
+        href="https://x.com"
+        target="_blank"
+        aria-label="Visit us on X"
+        className="text-gray-950 data-hover:text-gray-950/75"
+      >
+        <SocialIconX className="size-4" />
+      </Link>
+      <Link
+        href="https://linkedin.com"
+        target="_blank"
+        aria-label="Visit us on LinkedIn"
+        className="text-gray-950 data-hover:text-gray-950/75"
+      >
+        <SocialIconLinkedIn className="size-4" />
+      </Link>
+    </>
+  )
+}
+
+function Copyright() {
+  return (
+    <div className="text-sm/6 text-gray-950">
+      &copy; {new Date().getFullYear()} Burnt Inc.
+    </div>
   )
 }
 
 export function Footer() {
   return (
-    <Container as="footer" className="mt-24 w-full sm:mt-32 lg:mt-40">
-      <FadeIn>
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-          <Navigation />
-          <div className="flex lg:justify-end">
-            <NewsletterForm />
-          </div>
-        </div>
-        <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
-          <Link href="/" aria-label="Home">
-            <Logo className="h-8" fillOnHover />
-          </Link>
-          <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
-          </p>
-        </div>
-      </FadeIn>
-    </Container>
+    <footer>
+      <Gradient className="relative">
+        <div className="absolute inset-2 rounded-4xl bg-white/80" />
+        <Container>
+          <CallToAction />
+          <PlusGrid className="pb-16">
+            <PlusGridRow>
+              <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
+                <div className="col-span-2 flex">
+                  <PlusGridItem className="pt-6 lg:pb-6">
+                    <Logo className="h-9" />
+                  </PlusGridItem>
+                </div>
+                <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
+                  <Sitemap />
+                </div>
+              </div>
+            </PlusGridRow>
+            <PlusGridRow className="flex justify-between">
+              <div>
+                <PlusGridItem className="py-3">
+                  <Copyright />
+                </PlusGridItem>
+              </div>
+              <div className="flex">
+                <PlusGridItem className="flex items-center gap-8 py-3">
+                  <SocialLinks />
+                </PlusGridItem>
+              </div>
+            </PlusGridRow>
+          </PlusGrid>
+        </Container>
+      </Gradient>
+    </footer>
   )
 }

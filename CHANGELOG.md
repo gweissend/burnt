@@ -12,56 +12,19 @@
 
 - Update template to Tailwind CSS v4.0
 
-## 2024-06-18
+## 2024-10-07
 
-- Update `prettier` and `prettier-plugin-tailwindcss` dependencies
+- Tidy tier data on pricing page
 
-## 2024-05-31
+## 2024-09-23
 
-- Fix `npm audit` warnings
+- Fix incorrect date format on blog post page ([#1632](https://github.com/tailwindlabs/tailwind-plus-issues/issues/1632))
+- Update all images to use absolute paths ([#1631](https://github.com/tailwindlabs/tailwind-plus-issues/issues/1631))
 
-## 2024-05-07
+## 2024-09-13
 
-- Bump Headless UI dependency to v2.0
+- Update dependencies
 
-## 2024-01-17
-
-- Fix `shiki` dependency issues ([#1549](https://github.com/tailwindlabs/tailwind-plus-issues/issues/1549))
-- Fix `sharp` dependency issues ([#1549](https://github.com/tailwindlabs/tailwind-plus-issues/issues/1549))
-
-## 2024-01-16
-
-- Replace Twitter with X
-
-## 2024-01-10
-
-- Update Tailwind CSS, Next.js, Prettier, TypeScript, ESLint, and other dependencies
-
-## 2023-09-07
-
-- Added TypeScript version of template
-
-## 2023-08-24
-
-- Add missing `@types/mdx` dependency ([#1496](https://github.com/tailwindlabs/tailwind-plus-issues/issues/1496))
-
-## 2023-08-15
-
-- Bump Next.js and MDX dependencies
-
-## 2023-08-14
-
-- Simplify article and case study metadata
-
-## 2023-07-31
-
-- Port template to Next.js app router
-- Fix route handlers with `.js` extensions ([#1484](https://github.com/tailwindlabs/tailwind-plus-issues/issues/1484))
-
-## 2023-07-26
-
-- Add missing `acorn` and `acorn-jsx` dependencies ([#1481](https://github.com/tailwindlabs/tailwind-plus-issues/issues/1481))
-
-## 2023-07-13
+## 2024-09-12
 
 - Initial release
