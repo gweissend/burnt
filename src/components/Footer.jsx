@@ -168,7 +168,7 @@ export function Footer() {
                   </PlusGridItem>
                 </div>
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
-                  <Sitemap />
+                  {/* <Sitemap /> */}
                 </div>
               </div>
             </PlusGridRow>

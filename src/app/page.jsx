@@ -17,6 +17,8 @@ import { Screenshot } from '@/components/screenshot'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
+import { EnhancedQuiz } from '@/components/enhanced-quiz'
+
 
 export const metadata = {
   description:
@@ -34,7 +36,7 @@ function Hero() {
               href="/blog/burnt-raises-5m-seed-from-job-matching-ventures"
               className="flex items-center gap-1 rounded-full bg-amber-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-amber-950/30"
             >
-              Burnt join Founder University
+              Burnt joins Founder University
               {/* <ChevronRightIcon className="size-4" /> */}
             </Link>
           }
@@ -101,15 +103,15 @@ export default function Home() {
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <Container className="mt-10">
+        {/* <Container className="mt-10">
           <LogoCloud />
-        </Container>
+        </Container> */}
         <div className="bg-linear-to-b from-white from-50% to-gray-100 py-32">
                <BentoSection />
         </div>
         <HowItWorks />
-        <QuizPreview />
-      </main>
+        <EnhancedQuiz />
+</main>
       <Footer />
     </div>
   )
