@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { Container } from './container'
-import { Heading, Subheading } from './text'
-import { Button } from './button'
+import { Container } from '@/components/container'
+import { Heading, Subheading } from '@/components/text'
+import { Button } from '@/components/button'
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import { initializeApp, getApp } from 'firebase/app'
 
