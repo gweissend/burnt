@@ -1,5 +1,5 @@
-import { Container } from './container'
-import { Heading, Subheading } from './text'
+import { Container } from '@/components/container'
+import { Heading, Subheading } from '@/components/text'
 
 const steps = [
   {
