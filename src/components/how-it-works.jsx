@@ -1,5 +1,5 @@
-import { Container } from '@/components/container'
-import { Heading, Subheading } from '@/components/text'
+import { Container } from './container'
+import { Heading, Subheading } from './text'
 
 const steps = [
   {
@@ -79,6 +79,7 @@ export function HowItWorks() {
             ))}
           </div>
         </div>
+        
       </Container>
     </div>
   )
