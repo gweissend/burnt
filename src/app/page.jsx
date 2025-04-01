@@ -11,6 +11,7 @@ import { Map } from '@/components/map'
 import { Navbar } from '@/components/navbar'
 import { Heading, Subheading } from '@/components/text'
 import { EnhancedQuiz } from '@/components/enhanced-quiz'
+import { TestComponent } from '@/components/test-component'
 
 
 export const metadata = {
@@ -45,6 +46,7 @@ function Hero() {
             <Button href="#">Get started</Button>
           </div>
         </div>
+       <TestComponent/> 
       </Container>
     </div>
   )
